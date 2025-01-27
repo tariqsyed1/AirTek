@@ -4,7 +4,26 @@ Hi there, thanks for taking a look at my submission!
 
 To run the code, just click Run under Main.java and you should see the console output as described in the project document.
 
-The only dependency used in this project is GSON to parse the incoming orders. Please make sure you have that library installed. [Here's a link to download it if you don't already have it.](https://github.com/google/gson)
+The only dependency used in this project is GSON to parse the incoming orders. Please make sure you have that library installed. [Here's a link to download it if you don't already have it.](https://github.com/google/gson). This application can be run on Java 8 or higher. 
+
+
+### Design
+This project follows an object-oriented design. The main components of the application are described as follows:
+**Order**: Represents individual orders, including their ID, destination, and scheduling status.
+**Flight**: Represents flights with details like flight number, origin, destination, day, capacity, and orders already assigned to that flight.
+**FlightSchedule** Represents a list of flights and provides a method for querying flights by destination.
+**OrderScheduler**: Implements the core scheduling logic, to assign orders to flights based on the destination/capacity.
+**InputParser**: Handles the parsing of JSON, and create a default flight schedule as described in the document.
+**OutputGenerator*: Formates and outputs the flight schedule and orders to the console.
+**Main**: Orchestrates the entire workflow.
+
+## Flow:
+1. We first parse all the orders as described in the JSON file, and convert this into a list of `Order` objects.
+2. We then load the flight schedule, using the default flight schedule as described in the scenario.
+3. We schedule orders, assigning each order to the first available flight that matches the destination and has some capacity left.
+4. We print the flight schedule and the status of each order (if it was scheduled or not) to the console.
+
+### Sample Output
 
 Sample Output:
 ```
