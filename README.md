@@ -10,12 +10,26 @@ The only dependency used in this project is GSON to parse the incoming orders. P
 ### Design
 This project follows an object-oriented design. The main components of the application are described as follows:
 **Order**: Represents individual orders, including their ID, destination, and scheduling status.
+
+
 **Flight**: Represents flights with details like flight number, origin, destination, day, capacity, and orders already assigned to that flight.
+
+
 **FlightSchedule** Represents a list of flights and provides a method for querying flights by destination.
+
+
 **OrderScheduler**: Implements the core scheduling logic, to assign orders to flights based on the destination/capacity.
+
+
 **InputParser**: Handles the parsing of JSON, and create a default flight schedule as described in the document.
+
+
 **OutputGenerator*: Formates and outputs the flight schedule and orders to the console.
+
+
 **Main**: Orchestrates the entire workflow.
+
+
 
 ## Flow:
 1. We first parse all the orders as described in the JSON file, and convert this into a list of `Order` objects.
