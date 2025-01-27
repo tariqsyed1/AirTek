@@ -2,7 +2,7 @@
 
 Hi there, thanks for taking a look at my submission!
 
-To run the code, just click Run under Main.java and you should see the console output as described in the project document.
+To run the code, just click Run under Main.java (Located under SpeedyAir->src->Main.java) and you should see the console output as described in the project document.
 
 The only dependency used in this project is GSON to parse the incoming orders. Please make sure you have that library installed. [Here's a link to download it if you don't already have it.](https://github.com/google/gson). This application can be run on Java 8 or higher. 
 
