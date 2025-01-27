@@ -12,7 +12,7 @@ import java.util.List;
 public class OrderScheduler {
 
     /*
-     * Method to schedule orders into flights by tyings together the Order, Flight, and FlightSchedule classes.
+     * Method to schedule orders into flights by tying together the Order, Flight, and FlightSchedule classes.
      * @param orders: List of orders to fill
      * @param Flights: List of flights available to fulfil orders
      */

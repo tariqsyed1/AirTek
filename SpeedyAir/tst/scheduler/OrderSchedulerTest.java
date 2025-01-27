@@ -10,6 +10,8 @@ import java.util.List;
 
 public class OrderSchedulerTest {
 
+    // TODO: Refactor to use JUnit for more robust testing.
+
     public static void main(String[] args) {
         // Create orders
         List<Order> orders = Arrays.asList(
