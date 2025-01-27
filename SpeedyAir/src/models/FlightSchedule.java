@@ -38,7 +38,12 @@ public class FlightSchedule {
 
     @Override
     public String toString() {
-        return "FlightSchedule [flights=" + flights + "]";
+        StringBuilder sb = new StringBuilder();
+        for (Flight flight : flights) {
+            sb.append("Flight Number: ").append(flight.getFlightNumber()).append("\n");
+            sb.append("Orders: ").append(flight.getOrders().isEmpty() ? "None" : flight.getOrders()).append("\n");
+        }
+        return sb.toString();
     }
 
 }
