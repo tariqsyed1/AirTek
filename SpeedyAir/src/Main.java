@@ -16,8 +16,7 @@ public class Main {
         try {
             // Step 1: Parse the orders from the JSON file
             String filePath = "src/data/coding-assigment-orders.json";
-            List<Order> orders;
-            orders = InputParser.parseOrders(filePath);
+            List<Order> orders = InputParser.parseOrders(filePath);
 
             // Step 2: Load default flight schedule
             FlightSchedule flightSchedule = InputParser.loadDefaultFlightSchedule();

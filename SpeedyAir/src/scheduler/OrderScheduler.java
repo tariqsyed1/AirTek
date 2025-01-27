@@ -26,7 +26,7 @@ public class OrderScheduler {
             // Try assigning the order to the first available flight with capacity
             for (Flight flight : flights) {
                 if (flight.addOrder(order)) {
-                    isScheduled = true; // TODO: Change this to order.setScheduled(true)
+                    isScheduled = true;
                     break;
                 }
             }
