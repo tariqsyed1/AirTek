@@ -3,14 +3,15 @@ package utils;
 import models.Order;
 import models.Flight;
 import models.FlightSchedule;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.google.gson.Gson;
+
+import java.util.Map;
 
 /*
  * Parse incoming orders from the coding-assignment-orders.json file, and load the default flight schedule.
@@ -25,13 +26,16 @@ public class InputParser {
 
         // Read JSON File
         String content = new String(Files.readAllBytes(Paths.get(filePath)));
-        JSONObject jsonObject = new JSONObject(content);
 
-        // Parse orders
-        for (String key : jsonObject.keySet()) {
-            JSONObject orderObject = jsonObject.getJSONObject(key);
-            String destination = orderObject.getString("destination");
-            orders.add(new Order(key, destination));
+        // Parse JSON into a Map
+        Gson gson = new Gson();
+        Map<String, Map<String, String>> jsonMap = gson.fromJson(content, Map.class);
+
+        // Convert map into a list of orders
+        for (Map.Entry<String, Map<String, String>> entry : jsonMap.entrySet()) {
+            String orderId = entry.getKey();
+            String destination = entry.getValue().get("destination");
+            orders.add(new Order(orderId, destination));
         }
 
         return orders;
